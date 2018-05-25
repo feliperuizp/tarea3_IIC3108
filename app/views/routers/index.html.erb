@@ -1,23 +1,35 @@
 <div style='width: 800px;'>  
   <div id="map" style='width: 800px; height: 400px;'></div>  
-</div>  
+</div>
 
 <script type="text/javascript">  
-handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers([
-    {
-      "lat": -33.497933,
-      "lng": -70.611716,
-      "picture": {
-        "width":  32,
-        "height": 32
-      },
-      "infowindow": "hello!"
-    }
-  ]);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-});
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var airplane = 'https://maps.google.com/mapfiles/kml/shapes/airports.png';
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map,
+          icon: airplane
+        });
+        var line = new google.maps.Polyline({
+        path: [
+            new google.maps.LatLng(-25.363, 131.044), 
+            new google.maps.LatLng(-25.363, 131.544)
+        ],
+        strokeColor: "#FF0000",
+        strokeOpacity: 1.0,
+        strokeWeight: 3,
+        geodesic: true,
+        map: map
+        });
 
+      }
+</script>
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfPv6rKebRDZyT88-jUaKsFPVMu4wj2JE&callback=initMap">
 </script>

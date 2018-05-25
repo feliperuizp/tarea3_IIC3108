@@ -214,3 +214,383 @@ Processing by RoutersController#index as HTML
 Completed 200 OK in 502ms (Views: 299.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:00:13 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 405ms
+
+
+  
+ActionView::Template::Error (couldn't find file 'socket.io' with type 'application/javascript'
+Checked in these paths: 
+  /Users/Ruizo/CodigoUniversidad/TallerDeIntegracion/tarea3_Ruiz/app/assets/config
+  /Users/Ruizo/CodigoUniversidad/TallerDeIntegracion/tarea3_Ruiz/app/assets/images
+  /Users/Ruizo/CodigoUniversidad/TallerDeIntegracion/tarea3_Ruiz/app/assets/javascripts
+  /Users/Ruizo/CodigoUniversidad/TallerDeIntegracion/tarea3_Ruiz/app/assets/stylesheets
+  /Library/Ruby/Gems/2.3.0/gems/gmaps4rails-2.1.2/vendor/assets/javascripts
+  /Library/Ruby/Gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Library/Ruby/Gems/2.3.0/gems/actioncable-5.1.6/lib/assets/compiled
+  /Library/Ruby/Gems/2.3.0/gems/actionview-5.1.6/lib/assets/compiled
+  /Library/Ruby/Gems/2.3.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /Users/Ruizo/CodigoUniversidad/TallerDeIntegracion/tarea3_Ruiz/node_modules):
+    4:     <title>Tarea3Ruiz</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/application.js:18
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1784021041575900613_70235705703780'
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:10:34 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 589ms (Views: 374.8ms)
+
+
+Started GET "/%E2%80%9D/socket.io/socket.io.js%E2%80%9D" for 127.0.0.1 at 2018-05-25 12:10:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/%E2%80%9D/socket.io/socket.io.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/%E2%80%9D/socket.io/socket.io.js%E2%80%9D" for 127.0.0.1 at 2018-05-25 12:10:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/%E2%80%9D/socket.io/socket.io.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:10:42 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 61ms (Views: 57.7ms)
+
+
+Started GET "/%E2%80%9D/socket.io/socket.io.js%E2%80%9D" for 127.0.0.1 at 2018-05-25 12:10:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/%E2%80%9D/socket.io/socket.io.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:11:13 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 502ms (Views: 286.6ms)
+
+
+Started GET "/%E2%80%9D/socket.io/socket.io.js%E2%80%9D" for 127.0.0.1 at 2018-05-25 12:11:14 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/%E2%80%9D/socket.io/socket.io.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:13:50 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 686ms (Views: 479.9ms)
+
+
+Started GET "/%E2%80%9D/socket.io/socket.io.js%E2%80%9D" for 127.0.0.1 at 2018-05-25 12:13:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/%E2%80%9D/socket.io/socket.io.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:14:48 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 497ms (Views: 292.4ms)
+
+
+Started GET "/%E2%80%9D/socket.io/socket.io.js%E2%80%9D" for 127.0.0.1 at 2018-05-25 12:14:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/%E2%80%9D/socket.io/socket.io.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:15:23 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 483ms (Views: 280.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:19:54 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 484ms (Views: 277.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:19:59 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 45ms (Views: 42.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:30:14 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 477ms (Views: 276.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:30:50 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 492ms (Views: 285.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:33:27 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 486ms (Views: 282.4ms)
+
+
+Started GET "/public/airplane.png" for 127.0.0.1 at 2018-05-25 12:33:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/public/airplane.png"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:34:48 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 481ms (Views: 279.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:35:37 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 487ms (Views: 281.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:41:23 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 711ms (Views: 418.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:41:25 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 75ms (Views: 70.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:42:12 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 479ms (Views: 274.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:42:55 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 481ms (Views: 279.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:44:39 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 505ms (Views: 289.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:47:54 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 484ms (Views: 275.0ms)
+
+

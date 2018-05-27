@@ -1,5 +1,5 @@
-<div style='width: 800px;'>  
-  <div id="map" style='width: 800px; height: 400px;'></div>  
+<div style='width: 1000px;'>  
+  <div id="map" style='width: 1000px; height: 600px;'></div>  
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
 
@@ -19,31 +19,6 @@
     console.log("Connected!");
   });
 
-  socket.emit("AIRPORTS");
-  socket.emit("FLIGHTS");
-
-  socket.on("AIRPORTS", function(AIRPORTS) {
-    for (var key in AIRPORTS){
-      airports[key]=AIRPORTS[key];
-    };
-  });
-
-  socket.on("FLIGHTS", function(FLIGHTS) {
-    for (var key in FLIGHTS){
-      planes[key]=FLIGHTS[key];
-      planes[key]["positions"]=[];
-    };
-  });
-
-
-  socket.on("POSITION", function(POSITION) {
-    for (var key in planes){
-      if (planes[key]["code"] === POSITION["code"]) {
-        planes[key]["positions"].push(POSITION["position"]);
-      }
-    };
-  });
-
   function initMap() {
     var santiago = {lat: -33.424584, lng: -70.666917};
     var airplane = 'https://maps.google.com/mapfiles/kml/pal2/icon56.png';
@@ -54,56 +29,81 @@
     center: santiago
     });
 
-    airportsList = []
-    console.log(airports);
+    planesPosition={}
+    airportsPosition={}
 
-
-    var marker = new google.maps.Marker({
-    position: santiago,
-    map: map,
-    icon: airplane
-    });
-    
-    var line = new google.maps.Polyline({
-    path: [
-        new google.maps.LatLng(-25.363, 131.044), 
-        new google.maps.LatLng(-25.363, 131.544)
-    ],
-    strokeColor: "#FF0000",
-    strokeOpacity: 1.0,
-    strokeWeight: 3,
-    geodesic: true,
-    map: map
+    socket.emit("AIRPORTS");
+    socket.on("AIRPORTS", function(AIRPORTS) {
+      for (var key in AIRPORTS){
+        airports[key]=AIRPORTS[key];
+        airportsPosition[airports[key]]=new google.maps.Marker({
+        position: {lat: airports[key]['airport_position'][0], lng: airports[key]['airport_position'][1]},
+        map: map,
+        icon: airport
+        });
+      };
     });
 
-    var contentString = '<div id="content">'+
-    '<div id="siteNotice">'+
-    '</div>'+
-    '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
-    '<div id="bodyContent">'+
-    '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-    'sandstone rock formation in the southern part of the '+
-    'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
-    'south west of the nearest large town, Alice Springs; 450&#160;km '+
-    '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
-    'features of the Uluru - Kata Tjuta National Park. Uluru is '+
-    'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
-    'Aboriginal people of the area. It has many springs, waterholes, '+
-    'rock caves and ancient paintings. Uluru is listed as a World '+
-    'Heritage Site.</p>'+
-    '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
-    'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
-    '(last visited June 22, 2009).</p>'+
-    '</div>'+
-    '</div>';
-
-    var infowindow = new google.maps.InfoWindow({
-      content: contentString
+    socket.emit("FLIGHTS");
+    socket.on("FLIGHTS", function(FLIGHTS) {
+      for (var key in FLIGHTS){
+        planes[key]=FLIGHTS[key];
+        planes[key]["positions"]=[];
+        new google.maps.Polyline({
+        path: [
+            new google.maps.LatLng(planes[key]['origin']['airport_position'][0], planes[key]['origin']['airport_position'][1]), 
+            new google.maps.LatLng(planes[key]['destination']['airport_position'][0], planes[key]['destination']['airport_position'][1])
+        ],
+        strokeColor: "#FF0000",
+        strokeOpacity: 1.0,
+        strokeWeight: 3,
+        geodesic: true,
+        map: map
+        });
+      };
     });
 
-    marker.addListener('click', function() {
-      infowindow.open(map, marker);
+    socket.on("POSITION", function(POSITION) {
+    for (var key in planes){
+      if (planes[key]["code"] === POSITION["code"]) {
+        planes[key]["positions"].push(POSITION["position"]);
+        planesPosition[planes[key]]= new google.maps.Marker({
+          position: {lat: planes[key]["positions"][(planes[key]["positions"]).length-1][0],lng: planes[key]["positions"][(planes[key]["positions"]).length-1][1]},
+          map: map,
+          icon: airplane
+        });
+        var contentString = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+        '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+        '<div id="bodyContent">'+
+        '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+        'sandstone rock formation in the southern part of the '+
+        'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+        'south west of the nearest large town, Alice Springs; 450&#160;km '+
+        '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+        'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+        'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+        'Aboriginal people of the area. It has many springs, waterholes, '+
+        'rock caves and ancient paintings. Uluru is listed as a World '+
+        'Heritage Site.</p>'+
+        '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+        'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+        '(last visited June 22, 2009).</p>'+
+        '</div>'+
+        '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        planesPosition[planes[key]].addListener('click', function() {
+          infowindow.open(map, planesPosition[planes[key]]);
+        });
+      }
+    };
     });
+
     }
 </script>
 

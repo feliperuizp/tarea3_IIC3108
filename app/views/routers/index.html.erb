@@ -32,6 +32,8 @@
     planesPosition={}
     airportsPosition={}
     livePositions= {}
+    listeners={}
+    infowindows={}
 
     socket.emit("AIRPORTS");
     socket.on("AIRPORTS", function(AIRPORTS) {
@@ -47,11 +49,11 @@
         '</div>'+
         '<h1 id="firstHeading" class="firstHeading">'+key+'</h1>'+
         '<div id="bodyContent">'+
-        '<p>'+'Name:'+airports[key]['name']+'<p>'
-        +'City '+airports[key]['city']+'<p>'
-        +'Country '+airports[key]['country']+'<p>'
-        +'Country Code '+airports[key]['country_code']+'<p>'
-        +'Airport Code '+airports[key]['airport_code']+'<p>'
+        '<p>'+'Name: '+airports[key]['name']+'<p>'
+        +'City: '+airports[key]['city']+'<p>'
+        +'Country: '+airports[key]['country']+'<p>'
+        +'Country Code: '+airports[key]['country_code']+'<p>'
+        +'Airport Code: '+airports[key]['airport_code']+'<p>'
         '</div>'+
         '</div>';
 
@@ -103,22 +105,25 @@
         '</div>'+
         '<h1 id="firstHeading" class="firstHeading">'+planes[key]['code']+'</h1>'+
         '<div id="bodyContent">'+
-        '<p>'+'Airline:'+planes[key]['airline']+'<p>'
-        +'Origin'+planes[key]['origin']['name']+'<p>'
-        +'Destination'+planes[key]['destination']['name']+'<p>'
-        +'Plane'+planes[key]['plane']+'<p>'
+        '<p>'+'Airline: '+planes[key]['airline']+'<p>'
+        +'Origin: '+planes[key]['origin']['name']+'<p>'
+        +'Destination: '+planes[key]['destination']['name']+'<p>'
+        +'Plane: '+planes[key]['plane']+'<p>'
         '</div>'+
         '</div>';
+
+        planesPosition[key] = marker;
 
         var infowindow = new google.maps.InfoWindow({
           content: contentString
         });
 
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
-        });
+        infowindows[key] = infowindow;
 
-        planesPosition[key] = marker;
+        planesPosition[key].addListener('click', function() {
+          infowindows[key].open(map, planesPosition[key]);
+        });
+        
 
       };
     });
@@ -129,7 +134,6 @@
         latlng = new google.maps.LatLng(POSITION["position"][0],POSITION["position"][1]);
         planes[key]["positions"].push(latlng);
         planesPosition[key].setPosition(latlng);
-        console.log(livePositions);
         livePositions[POSITION["code"]].setPath(planes[key]["positions"]);
       }
     };

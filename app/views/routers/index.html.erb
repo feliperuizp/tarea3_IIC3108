@@ -31,15 +31,36 @@
 
     planesPosition={}
     airportsPosition={}
+    livePositions= {}
 
     socket.emit("AIRPORTS");
     socket.on("AIRPORTS", function(AIRPORTS) {
       for (var key in AIRPORTS){
         airports[key]=AIRPORTS[key];
-        airportsPosition[airports[key]]=new google.maps.Marker({
+        airportsPosition[key]=new google.maps.Marker({
         position: {lat: airports[key]['airport_position'][0], lng: airports[key]['airport_position'][1]},
         map: map,
         icon: airport
+        });
+        var contentString = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+        '<h1 id="firstHeading" class="firstHeading">'+key+'</h1>'+
+        '<div id="bodyContent">'+
+        '<p>'+'Name:'+airports[key]['name']+'<p>'
+        +'City '+airports[key]['city']+'<p>'
+        +'Country '+airports[key]['country']+'<p>'
+        +'Country Code '+airports[key]['country_code']+'<p>'
+        +'Airport Code '+airports[key]['airport_code']+'<p>'
+        '</div>'+
+        '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        airportsPosition[key].addListener('click', function() {
+          infowindow.open(map, airportsPosition[key]);
         });
       };
     });
@@ -60,36 +81,32 @@
         geodesic: true,
         map: map
         });
-      };
-    });
-
-    socket.on("POSITION", function(POSITION) {
-    for (var key in planes){
-      if (planes[key]["code"] === POSITION["code"]) {
-        planes[key]["positions"].push(POSITION["position"]);
-        planesPosition[planes[key]]= new google.maps.Marker({
-          position: {lat: planes[key]["positions"][(planes[key]["positions"]).length-1][0],lng: planes[key]["positions"][(planes[key]["positions"]).length-1][1]},
+        var line = new google.maps.Polyline({
+        path: [
+            new google.maps.LatLng(planes[key]['origin']['airport_position'][0], planes[key]['origin']['airport_position'][1]), 
+        ],
+        strokeColor: "#4A90E2",
+        strokeOpacity: 1.0,
+        strokeWeight: 3,
+        geodesic: true,
+        map: map
+        });
+        livePositions[planes[key]['code']] = line;
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(planes[key]['origin']['airport_position'][0], planes[key]['origin']['airport_position'][1]),
           map: map,
           icon: airplane
         });
+        
         var contentString = '<div id="content">'+
         '<div id="siteNotice">'+
         '</div>'+
-        '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+        '<h1 id="firstHeading" class="firstHeading">'+planes[key]['code']+'</h1>'+
         '<div id="bodyContent">'+
-        '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-        'sandstone rock formation in the southern part of the '+
-        'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
-        'south west of the nearest large town, Alice Springs; 450&#160;km '+
-        '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
-        'features of the Uluru - Kata Tjuta National Park. Uluru is '+
-        'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
-        'Aboriginal people of the area. It has many springs, waterholes, '+
-        'rock caves and ancient paintings. Uluru is listed as a World '+
-        'Heritage Site.</p>'+
-        '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
-        'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
-        '(last visited June 22, 2009).</p>'+
+        '<p>'+'Airline:'+planes[key]['airline']+'<p>'
+        +'Origin'+planes[key]['origin']['name']+'<p>'
+        +'Destination'+planes[key]['destination']['name']+'<p>'
+        +'Plane'+planes[key]['plane']+'<p>'
         '</div>'+
         '</div>';
 
@@ -97,9 +114,23 @@
           content: contentString
         });
 
-        planesPosition[planes[key]].addListener('click', function() {
-          infowindow.open(map, planesPosition[planes[key]]);
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
         });
+
+        planesPosition[key] = marker;
+
+      };
+    });
+
+    socket.on("POSITION", function(POSITION) {
+    for (var key in planes){
+      if (planes[key]["code"] === POSITION["code"]) {
+        latlng = new google.maps.LatLng(POSITION["position"][0],POSITION["position"][1]);
+        planes[key]["positions"].push(latlng);
+        planesPosition[key].setPosition(latlng);
+        console.log(livePositions);
+        livePositions[POSITION["code"]].setPath(planes[key]["positions"]);
       }
     };
     });

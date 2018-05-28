@@ -19,10 +19,24 @@
     console.log("Connected!");
   });
 
+  function addInfoWindow(marker, message, infowindows) {
+  var infoWindow = new google.maps.InfoWindow({
+    content: message
+  });
+  google.maps.event.addListener(marker, 'click', function () {
+    infowindows.forEach(function(ventana) {
+     ventana.close(map);
+    });
+    infoWindow.open(map, marker);
+  });
+    return infoWindow
+  }
+
   function initMap() {
     var santiago = {lat: -33.424584, lng: -70.666917};
     var airplane = 'https://maps.google.com/mapfiles/kml/pal2/icon56.png';
-    var airport = 'https://maps.google.com/mapfiles/kml/pal2/icon48.png'
+    var airport = 'https://maps.google.com/mapfiles/kml/pal2/icon48.png';
+    var infowindows = [];
     
     var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 4,
@@ -33,7 +47,6 @@
     airportsPosition={}
     livePositions= {}
     listeners={}
-    infowindows={}
 
     socket.emit("AIRPORTS");
     socket.on("AIRPORTS", function(AIRPORTS) {
@@ -56,14 +69,9 @@
         +'Airport Code: '+airports[key]['airport_code']+'<p>'
         '</div>'+
         '</div>';
-
-        var infowindow = new google.maps.InfoWindow({
-          content: contentString
-        });
-
-        airportsPosition[key].addListener('click', function() {
-          infowindow.open(map, airportsPosition[key]);
-        });
+        
+        nuevaVentana=addInfoWindow(airportsPosition[key], contentString, infowindows)
+        infowindows.push(nuevaVentana);
       };
     });
 
@@ -71,6 +79,7 @@
     socket.on("FLIGHTS", function(FLIGHTS) {
       for (var key in FLIGHTS){
         planes[key]=FLIGHTS[key];
+        
         planes[key]["positions"]=[];
         new google.maps.Polyline({
         path: [
@@ -109,22 +118,14 @@
         +'Origin: '+planes[key]['origin']['name']+'<p>'
         +'Destination: '+planes[key]['destination']['name']+'<p>'
         +'Plane: '+planes[key]['plane']+'<p>'
+        +'Seats: '+planes[key]['seats']+'<p>'
         '</div>'+
         '</div>';
 
         planesPosition[key] = marker;
-
-        var infowindow = new google.maps.InfoWindow({
-          content: contentString
-        });
-
-        infowindows[key] = infowindow;
-
-        planesPosition[key].addListener('click', function() {
-          infowindows[key].open(map, planesPosition[key]);
-        });
+        nuevaVentana = addInfoWindow(planesPosition[key], contentString, infowindows)
+        infowindows.push(nuevaVentana);
         
-
       };
     });
 

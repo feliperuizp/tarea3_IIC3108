@@ -2454,3 +2454,220 @@ Processing by RoutersController#index as HTML
 Completed 200 OK in 49ms (Views: 46.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-05-27 15:41:53 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 589ms (Views: 333.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-27 15:42:31 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 46ms (Views: 43.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-27 15:42:58 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 44ms (Views: 41.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-27 15:43:42 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 70ms (Views: 67.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-27 15:44:13 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 55ms (Views: 53.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-27 15:44:40 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 68ms (Views: 65.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-27 15:45:22 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 63ms (Views: 60.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-27 15:46:13 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 48ms (Views: 46.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-27 15:46:28 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 47ms (Views: 45.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-27 15:46:50 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 46ms (Views: 44.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-27 15:47:04 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 44ms (Views: 42.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-27 15:50:33 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 46ms (Views: 43.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-27 16:21:46 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 618ms (Views: 347.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:19:27 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 634ms (Views: 348.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:20:48 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 499ms (Views: 303.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:25:56 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 68ms (Views: 63.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:27:23 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 67ms (Views: 64.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:32:58 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 656ms (Views: 399.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:34:22 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 44ms (Views: 41.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:37:36 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 45ms (Views: 42.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:38:39 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 76ms (Views: 73.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:39:26 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 63ms (Views: 59.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:39:42 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 62ms (Views: 60.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:40:03 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 61ms (Views: 58.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:43:58 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 53ms (Views: 50.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:44:13 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 50ms (Views: 46.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:44:53 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 44ms (Views: 41.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:46:24 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 66ms (Views: 63.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:47:09 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 45ms (Views: 42.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:47:38 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 44ms (Views: 41.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:48:03 -0400
+Processing by RoutersController#index as HTML
+  Rendering routers/index.html.erb within layouts/application
+  Rendered routers/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 68ms (Views: 66.1ms)
+
+
